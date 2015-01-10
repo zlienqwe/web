@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=GBK" />
+    <title>坐标变换</title>
+</head>
+<body>
+<h2>坐标变换</h2>
+<canvas id="mc" width="600" height=360" style="border: 2px solid black"></canvas>
+<script type="text/javascript">
+    function skew(context, angle){
+        context.transform(1, 0, -Math.tan(angle), 1, 0, 0);
+    }
+    var canvas = document.getElementById('mc');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = "rgba(255, 0, 0, 0.3)";
+    ctx.translate(360, 5);
+    for(var i = 0; i < 30; i++){
+        ctx.translate(50, 30);
+        ctx.scale(0.93, 0.93);
+        skew(ctx, Math.PI / 10);
+        ctx.fillRect(0, 0, 150, 75);
+    }
+</script>
+</body>
+</html>

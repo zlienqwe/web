@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=GBK" />
+    <title>内联框架</title>
+</head>
+<body>
+<h2>绘制文字</h2>
+<!--只能绘制奇数边形-->
+<canvas id="mc" width="400" height=300" style="border: 2px solid black"></canvas>
+<script type="text/javascript">
+    function createStar(context, n, dx, dy, size){
+        context.beginPath();
+        var dig = Math.PI / n * 4;
+        context.moveTo(dx, y + dy);
+        for(var i = 0; i <= n; i++){
+            var x = Math.sin(i * dig);
+            var y = Math.cos(i * dig);
+            context.lineTo(x * size + dx, y * size + dy);
+        }
+        context.closePath();
+    }
+    var canvas = document.getElementById('mc');
+    var ctx = canvas.getContext('2d');
+    createStar(ctx, 3, 60, 60, 50);
+    ctx.fillStyle = "#f00";
+    ctx.fill();
+    createStar(ctx, 7, 160, 60, 50);
+    ctx.strokeStyle = "#ff0";
+    ctx.stroke();
+
+</script>
+</body>
+</html>

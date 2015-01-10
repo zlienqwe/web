@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=GBK" />
+    <title>内联框架</title>
+</head>
+<body>
+<h2>绘制文字</h2>
+<canvas id="mc" width="400" height=300" style="border: 2px solid black"></canvas>
+<script type="text/javascript">
+    function createFlower(context, n, dx, dy, size, length){
+        context.beginPath();
+        context.moveTo(dx, dy+size);
+        var dig = 2 * Math.PI / n;
+        for(var i = 1; i < n+1; i++){
+            var ctrlx = Math.sin((i - 0.5) * dig) * length + dx;
+            var ctrly = Math.cos((i - 0.5) * dig) * length + dy;
+            var x = Math.sin(i * dig) * size + dx;
+            var y = Math.cos(i * dig) * size + dy;
+            context.quadraticCurveTo(ctrlx, ctrly, x, y);
+        }
+        context.closePath();
+    }
+
+    var canvas = document.getElementById('mc');
+    var ctx = canvas.getContext('2d');
+    createFlower(ctx, 5, 70, 100, 30, 80);
+    ctx.fillStyle = "#f00";
+    ctx.fill();
+</script>
+</body>
+</html>
