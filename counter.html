@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+        <meta charset="UTF-8">
+        <title>E ~ F伪类选择器</title>
+        <style type="text/css">
+                div>div{
+                        counter-increment: mycounter;
+                }
+                div>div:before{
+                        content:'第' counter(mycounter,upper-alpha) '本.';
+                        font-size: 20pt;
+                        font-weight: bolder;
+                }
+        </style>
+</head>
+<body>
+<div>
+        <div>疯狂java 讲义</div>
+        <div>疯狂android讲义</div>
+        <div>疯狂java ee企业应用实例</div>
+</div>
+</body>
+</html>

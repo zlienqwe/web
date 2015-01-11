@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+        <meta charset="UTF-8">
+        <title>E ~ F伪类选择器</title>
+        <style type="text/css">
+                td{
+                        border: 1px solid black;
+                        padding: 4px;
+                }
+                tr:hover{
+                        background-color: #aaaaaa;
+                }
+                input:active{
+                        background-color: #0000ff;
+                }
+                :focus{
+                        text-decoration: underline;
+                }
+                :enabled{
+                        font-family: "微软雅黑";
+                        font-weight: bolder;
+                        font-size: 14px;
+                }
+                :disabled{
+                        font-family: "arial", sans-serif;
+                        font-size: 14px;
+                }
+                :checked{
+                        outline: red solid 5px;
+                }
+                :default{
+                        outline: #dddddd solid 5px;
+                }
+                ::selection{
+                        background-color: red;
+                        color: white;
+                }
+                :target{
+                        background-color: #ff0;
+                }
+        </style>
+</head>
+<body>
+        <table style="width: 400px; border-collapse: collapse">
+                <tr>
+                        <td>疯狂 java 讲义</td>
+                        <td>109</td>
+                </tr>
+                <tr>
+                        <td>疯狂 java 讲义</td>
+                        <td>109</td>
+                </tr>
+                <tr contenteditable="true">
+                        <td>疯狂 java 讲义</td>
+                        <td>109</td>
+                </tr>
+        </table>
+        <button disabled>不可用按钮</button>
+        <input type="text" disabled value="不可用文本框" />
+        <button>可用的按钮</button>
+        <input type="text" value="可用文本框"/>
+        男：<input type="radio" value="male" name="gender" />
+        女：<input type="radio" value="female" name="gender" />
+        未知：<input type="radio" value="unknown" name="gender" />
+</body>
+</html>
